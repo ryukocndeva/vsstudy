@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Web;
+using System.Web.ModelBinding;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using WingtipToys.Models;
 
 namespace WingtipToys
 {
@@ -72,10 +75,31 @@ namespace WingtipToys
 
         }
 
+        public IQueryable<Category> GetCategories()
+        {
+            var _db = new WingtipToys.Models.ProductContext();
+            IQueryable<Category> query = _db.Categories;
+            return query;
+        }
+
+        public IQueryable<Product> GetProducts([QueryString("id")] int? categoryId)
+        {
+            var _db = new WingtipToys.Models.ProductContext();
+            IQueryable<Product> query = _db.Products;
+            if (categoryId.HasValue && categoryId > 0)
+            {
+                query = query.Where(p => p.CategoryID == categoryId);
+            }
+            return query;
+        }
+
+
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
+
+
     }
 
 }
