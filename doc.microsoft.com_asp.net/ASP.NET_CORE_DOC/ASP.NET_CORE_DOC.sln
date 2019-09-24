@@ -1,0 +1,19 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tutorials_WebApps_Blazor", "Tutorials_WebApps_Blazor", "{084462C5-F59D-49D6-B7D1-846DDC1B8550}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tutorials_WebApps_RazorPages", "Tutorials_WebApps_RazorPages", "{0C9B38ED-DA97-4CBE-B4CF-398EB395918F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tutorials+WebApps_MVC", "Tutorials+WebApps_MVC", "{F1FD7F3D-690A-4597-9E33-ECCD00014FB6}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF5ADBA0-9DAD-4524-B81C-86543835332A}
+	EndGlobalSection
+EndGlobal
